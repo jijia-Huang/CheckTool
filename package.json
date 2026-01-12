@@ -8,7 +8,8 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:electron && tsc && vite build",
+    "build": "npm run build:electron && npm run build:renderer",
+    "build:renderer": "tsc && vite build",
     "build:electron": "npm run build:preload && tsc -p tsconfig.electron.json",
     "build:preload": "node scripts/build-preload.js",
     "preview": "vite preview",
@@ -41,6 +42,7 @@
   "build": {
     "appId": "com.checktool.app",
     "productName": "美術回檔確認工具",
+    "copyright": "Copyright © 2026",
     "directories": {
       "output": "release"
     },
@@ -49,8 +51,27 @@
       "dist-electron/**/*"
     ],
     "win": {
-      "target": "nsis",
-      "icon": "build/icon.ico"
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "美術回檔確認工具"
     },
     "mac": {
       "target": "dmg",
