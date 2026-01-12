@@ -1,0 +1,192 @@
+.file-system-module {
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.file-system-module h2 {
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Directory Selector */
+.directory-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.select-directory-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  align-self: flex-start;
+}
+
+.select-directory-button:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.select-directory-button:disabled {
+  background-color: var(--text-muted);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.selected-path {
+  padding: 1.25rem;
+  background-color: var(--bg-main);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--success-color);
+}
+
+.path-label {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 0.85rem;
+}
+
+.path-value {
+  margin: 0;
+  color: var(--text-muted);
+  word-break: break-all;
+  font-family: 'Cascadia Code', monospace;
+  font-size: 0.85rem;
+}
+
+/* Scan Controls */
+.scan-controls {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.start-scan-button {
+  padding: 0.75rem 2.5rem;
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.start-scan-button:hover:not(:disabled) {
+  background-color: #047857;
+  transform: translateY(-1px);
+}
+
+/* Scan Progress */
+.scan-progress {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background-color: var(--info-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary-color);
+}
+
+.progress-content {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(0, 0, 0, 0.05);
+  border-top: 3px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.progress-info {
+  flex: 1;
+}
+
+.progress-text {
+  margin: 0 0 0.4rem 0;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.95rem;
+}
+
+.file-count {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.current-path {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-family: monospace;
+  word-break: break-all;
+  opacity: 0.7;
+}
+
+/* Scan Summary */
+.scan-summary {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background-color: var(--success-bg);
+  border-radius: 8px;
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  border-left: 4px solid var(--success-color);
+}
+
+.summary-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--success-color);
+}
+
+.summary-detail {
+  margin: 0.4rem 0;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.summary-detail strong {
+  color: var(--success-color);
+}
+
+/* Error Message */
+.error-message {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: var(--error-bg);
+  color: var(--error-color);
+  border-radius: 8px;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-left: 4px solid var(--error-color);
+  font-size: 0.9rem;
+}
